@@ -1,2554 +1,2211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Anshul Bisht | AI Developer & Python Backend Engineer</title>
-
-  <meta
-    name="description"
-    content="Anshul Bisht is an AI Developer and Python Backend Engineer building intelligent applications, REST APIs, backend systems and machine learning solutions."
-  />
-
-  <style>
-    /* =========================================================
-       DESIGN SYSTEM
-    ========================================================= */
-
-    :root {
-      --bg: #070a0f;
-      --bg-soft: #0b1017;
-      --card: #10161f;
-      --card-hover: #141c26;
-
-      --white: #f5f7fa;
-      --text: #c1c9d4;
-
-      --muted: #727e8e;
-
-      --green: #65e6a8;
-      --green-light: #86f1bd;
-      --green-soft: rgba(101, 230, 168, 0.1);
-
-      --blue: #82bfff;
-      --purple: #bd9aff;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Anshul Bisht — Python Developer focused on backend development, REST APIs, Django, SQL, AI/ML and practical software solutions.">
+
+    <meta name="keywords"
+          content="Anshul Bisht, Python Developer, Backend Developer, Django Developer, REST API, SQL, AI, Machine Learning, Delhi Developer">
+
+    <meta name="author" content="Anshul Bisht">
+
+    <title>Anshul Bisht | Python Developer</title>
+
+    <style>
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #070a0f;
+            color: #e7edf5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ::selection {
+            background: #65e6a8;
+            color: #07100c;
+        }
+
+        /* ================================
+           VARIABLES
+        ================================= */
+
+        :root {
+            --bg: #070a0f;
+            --bg-soft: #0b1017;
+            --card: #10161f;
+            --card-hover: #131b25;
+
+            --text: #e7edf5;
+            --text-soft: #a7b0bd;
+            --text-muted: #727d8c;
+
+            --green: #65e6a8;
+            --green-soft: rgba(101, 230, 168, 0.12);
+
+            --blue: #82bfff;
+            --purple: #bd9aff;
+
+            --border: rgba(255, 255, 255, 0.08);
+
+            --max-width: 1180px;
+        }
+
+        /* ================================
+           SCROLLBAR
+        ================================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #202a36;
+            border-radius: 10px;
+        }
 
-      --border: rgba(255, 255, 255, 0.085);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2c3948;
+        }
 
-      --radius: 18px;
-      --max-width: 1180px;
+        /* ================================
+           NAVIGATION
+        ================================= */
 
-      --font:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
 
-      --mono:
-        "SFMono-Regular",
-        Consolas,
-        "Liberation Mono",
-        monospace;
-    }
+            display: flex;
+            align-items: center;
 
+            background: rgba(7, 10, 15, 0.78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            z-index: 1000;
+        }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+        .nav-container {
+            width: min(100% - 40px, var(--max-width));
+            margin: auto;
 
-    body {
-      background:
-        radial-gradient(
-          circle at 80% 0%,
-          rgba(101, 230, 168, 0.07),
-          transparent 27%
-        ),
-        radial-gradient(
-          circle at 0% 40%,
-          rgba(130, 191, 255, 0.045),
-          transparent 25%
-        ),
-        var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-      color: var(--white);
+        .logo {
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
 
-      font-family: var(--font);
+        .logo span {
+            color: var(--green);
+        }
 
-      line-height: 1.6;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
 
-      overflow-x: hidden;
-    }
+        .nav-links a {
+            position: relative;
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
 
-    ::selection {
-      background: var(--green);
-      color: #06100b;
-    }
+            transition: 0.25s ease;
+        }
 
-    .container {
-      width: min(
-        var(--max-width),
-        calc(100% - 40px)
-      );
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text);
+        }
 
-      margin: 0 auto;
-    }
+        .nav-links a::after {
+            content: "";
 
+            position: absolute;
+            left: 0;
+            bottom: -7px;
 
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
+            width: 0;
+            height: 2px;
 
-    .navbar {
-      position: fixed;
+            background: var(--green);
 
-      top: 0;
-      left: 0;
+            transition: width 0.25s ease;
+        }
 
-      width: 100%;
-      height: 76px;
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
 
-      z-index: 1000;
+        .nav-button {
+            padding: 9px 16px;
 
-      background: rgba(7, 10, 15, 0.75);
+            border: 1px solid rgba(101, 230, 168, 0.35);
+            border-radius: 8px;
 
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+            color: var(--green) !important;
 
-      border-bottom: 1px solid rgba(255,255,255,0.055);
-    }
+            background: rgba(101, 230, 168, 0.05);
+        }
 
-    .nav-container {
-      height: 100%;
+        .nav-button:hover {
+            background: var(--green-soft);
+        }
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .nav-button::after {
+            display: none;
+        }
 
-    .logo {
-      font-family: var(--mono);
+        /* ================================
+           HERO
+        ================================= */
 
-      font-size: 18px;
+        .hero {
+            min-height: 100vh;
 
-      font-weight: 700;
+            width: min(100% - 40px, var(--max-width));
+            margin: auto;
 
-      letter-spacing: -0.5px;
-    }
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
 
-    .logo span {
-      color: var(--green);
-    }
+            align-items: center;
+            gap: 70px;
 
-    .nav-links {
-      list-style: none;
+            padding-top: 110px;
+            padding-bottom: 80px;
+        }
 
-      display: flex;
+        .hero-content {
+            max-width: 680px;
+        }
 
-      align-items: center;
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
 
-      gap: 30px;
-    }
+            margin-bottom: 24px;
 
-    .nav-links a {
-      color: var(--text);
+            color: var(--green);
 
-      font-size: 13px;
+            font-family: "Courier New", monospace;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
 
-      transition: 0.25s ease;
-    }
+        .eyebrow::before {
+            content: "";
 
-    .nav-links a:hover {
-      color: var(--green);
-    }
+            width: 7px;
+            height: 7px;
 
-    .nav-contact {
-      padding: 9px 16px;
+            background: var(--green);
+            border-radius: 50%;
 
-      border: 1px solid rgba(101,230,168,0.3);
+            box-shadow: 0 0 14px rgba(101, 230, 168, 0.6);
+        }
 
-      border-radius: 9px;
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 0.98;
 
-      color: var(--green) !important;
+            letter-spacing: -4px;
 
-      font-family: var(--mono);
+            margin-bottom: 28px;
+        }
 
-      font-size: 11px !important;
-    }
+        .hero h1 span {
+            color: var(--green);
+        }
 
-    .nav-contact:hover {
-      background: var(--green-soft);
-    }
+        .hero-description {
+            max-width: 650px;
 
+            color: var(--text-soft);
 
-    /* =========================================================
-       HERO
-    ========================================================= */
+            font-size: 18px;
+            line-height: 1.8;
 
-    .hero {
-      min-height: 100vh;
+            margin-bottom: 35px;
+        }
 
-      display: flex;
-      align-items: center;
+        .hero-description strong {
+            color: var(--text);
+            font-weight: 600;
+        }
 
-      padding: 140px 0 100px;
+        .hero-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
 
-      position: relative;
-    }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-    .hero-grid {
-      display: grid;
+            padding: 13px 20px;
 
-      grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(360px, 0.85fr);
+            border-radius: 8px;
 
-      gap: 80px;
+            font-size: 14px;
+            font-weight: 600;
 
-      align-items: center;
-    }
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border 0.25s ease;
+        }
 
-    .hero-label {
-      display: inline-flex;
+        .btn:hover {
+            transform: translateY(-2px);
+        }
 
-      align-items: center;
+        .btn-primary {
+            color: #06100b;
+            background: var(--green);
+        }
 
-      gap: 10px;
+        .btn-primary:hover {
+            background: #7af0b7;
+        }
 
-      margin-bottom: 25px;
+        .btn-secondary {
+            color: var(--text);
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.025);
+        }
 
-      color: var(--green);
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-      font-family: var(--mono);
+        /* ================================
+           TERMINAL
+        ================================= */
 
-      font-size: 12px;
+        .terminal {
+            position: relative;
 
-      letter-spacing: 0.7px;
-    }
+            border: 1px solid var(--border);
+            border-radius: 14px;
 
-    .pulse {
-      width: 7px;
-      height: 7px;
+            background: #0b1016;
 
-      border-radius: 50%;
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.35),
+                0 0 70px rgba(101, 230, 168, 0.04);
 
-      background: var(--green);
+            overflow: hidden;
+        }
 
-      box-shadow:
-        0 0 0 5px rgba(101,230,168,0.08),
-        0 0 18px rgba(101,230,168,0.7);
-    }
+        .terminal::before {
+            content: "";
 
-    .hero h1 {
-      max-width: 850px;
+            position: absolute;
+            top: -100px;
+            right: -100px;
 
-      font-size: clamp(
-        54px,
-        7.5vw,
-        92px
-      );
+            width: 250px;
+            height: 250px;
 
-      line-height: 0.96;
+            background: rgba(101, 230, 168, 0.08);
+            filter: blur(70px);
+            border-radius: 50%;
+        }
 
-      letter-spacing: -5px;
+        .terminal-top {
+            height: 44px;
 
-      font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 7px;
 
-      margin-bottom: 30px;
-    }
+            padding: 0 16px;
 
-    .hero h1 .green {
-      color: var(--green);
-    }
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
 
-    .hero h1 .outline {
-      color: transparent;
+        .terminal-dot {
+            width: 9px;
+            height: 9px;
 
-      -webkit-text-stroke:
-        1px rgba(245,247,250,0.45);
-    }
+            border-radius: 50%;
+            background: #39424e;
+        }
 
-    .hero-description {
-      max-width: 650px;
+        .terminal-title {
+            margin-left: 8px;
 
-      color: var(--text);
+            color: #626d7b;
 
-      font-size: 18px;
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+        }
 
-      line-height: 1.85;
+        .terminal-body {
+            padding: 27px 25px 31px;
 
-      margin-bottom: 35px;
-    }
+            font-family: "Courier New", monospace;
+            font-size: 13px;
 
-    .hero-description strong {
-      color: var(--white);
-      font-weight: 600;
-    }
+            line-height: 2;
+        }
 
-    .hero-buttons {
-      display: flex;
+        .terminal-line {
+            display: flex;
+            gap: 12px;
+        }
 
-      flex-wrap: wrap;
+        .terminal-key {
+            color: #697584;
+            min-width: 120px;
+        }
 
-      gap: 12px;
-    }
+        .terminal-value {
+            color: var(--text);
+        }
 
-    .button {
-      display: inline-flex;
+        .terminal-value.green {
+            color: var(--green);
+        }
 
-      align-items: center;
+        .terminal-value.blue {
+            color: var(--blue);
+        }
 
-      justify-content: center;
+        .terminal-value.purple {
+            color: var(--purple);
+        }
 
-      gap: 9px;
+        .cursor {
+            display: inline-block;
 
-      padding: 13px 20px;
+            width: 7px;
+            height: 14px;
 
-      border-radius: 10px;
+            margin-left: 5px;
 
-      font-size: 13px;
+            vertical-align: middle;
 
-      font-weight: 650;
+            background: var(--green);
 
-      transition: 0.25s ease;
-    }
+            animation: blink 1s infinite;
+        }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
 
-    .button-primary {
-      background: var(--green);
+        /* ================================
+           GENERAL SECTIONS
+        ================================= */
 
-      color: #06100b;
+        section {
+            scroll-margin-top: 90px;
+        }
 
-      box-shadow:
-        0 12px 35px rgba(101,230,168,0.08);
-    }
+        .section {
+            width: min(100% - 40px, var(--max-width));
+            margin: auto;
 
-    .button-primary:hover {
-      background: var(--green-light);
+            padding: 115px 0;
+        }
 
-      box-shadow:
-        0 15px 40px rgba(101,230,168,0.16);
-    }
+        .section-heading {
+            margin-bottom: 55px;
+        }
 
-    .button-secondary {
-      border: 1px solid var(--border);
+        .section-heading .small-label {
+            display: block;
 
-      background: rgba(255,255,255,0.02);
+            margin-bottom: 12px;
 
-      color: var(--white);
-    }
+            color: var(--green);
 
-    .button-secondary:hover {
-      border-color: rgba(101,230,168,0.3);
-    }
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            font-weight: 600;
 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    /* =========================================================
-       HERO TERMINAL
-    ========================================================= */
+        .section-heading h2 {
+            font-size: clamp(38px, 5vw, 56px);
+            line-height: 1.05;
 
-    .terminal {
-      width: 100%;
+            letter-spacing: -2.5px;
+        }
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(18,25,35,0.96),
-          rgba(9,14,21,0.96)
-        );
+        .section-heading p {
+            max-width: 650px;
 
-      border:
-        1px solid rgba(255,255,255,0.09);
+            margin-top: 18px;
 
-      border-radius: 18px;
+            color: var(--text-soft);
 
-      overflow: hidden;
+            font-size: 16px;
+            line-height: 1.8;
+        }
 
-      box-shadow:
-        0 40px 100px rgba(0,0,0,0.4);
+        /* ================================
+           ABOUT
+        ================================= */
 
-      transform: rotate(1deg);
-    }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 80px;
 
-    .terminal-top {
-      height: 43px;
+            align-items: start;
+        }
 
-      display: flex;
+        .about-content h3 {
+            margin-bottom: 22px;
 
-      align-items: center;
+            font-size: 30px;
+            line-height: 1.25;
 
-      gap: 7px;
+            letter-spacing: -1px;
+        }
 
-      padding: 0 15px;
+        .about-content h3 span {
+            color: var(--green);
+        }
 
-      border-bottom:
-        1px solid rgba(255,255,255,0.07);
+        .about-content p {
+            margin-bottom: 18px;
 
-      background:
-        rgba(255,255,255,0.025);
-    }
+            color: var(--text-soft);
 
-    .terminal-dot {
-      width: 9px;
-      height: 9px;
+            font-size: 16px;
+            line-height: 1.9;
+        }
 
-      border-radius: 50%;
+        .about-content strong {
+            color: var(--text);
+        }
 
-      background: #4e5968;
-    }
+        .about-highlight {
+            margin-top: 30px;
 
-    .terminal-file {
-      margin: auto;
+            padding: 20px 22px;
 
-      color: #626e7d;
+            border-left: 2px solid var(--green);
+            background: rgba(101, 230, 168, 0.035);
+        }
 
-      font-family: var(--mono);
+        .about-highlight p {
+            margin: 0;
 
-      font-size: 10px;
-    }
+            color: #c6ced8;
 
-    .terminal-body {
-      padding: 27px 25px 30px;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            line-height: 1.8;
+        }
 
-      font-family: var(--mono);
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+        }
 
-      font-size: 13px;
+        .stat {
+            min-height: 135px;
 
-      line-height: 2;
+            padding: 22px;
 
-      color: #aeb9c8;
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-    .blue {
-      color: var(--blue);
-    }
+            border: 1px solid var(--border);
+            border-radius: 12px;
 
-    .green {
-      color: var(--green);
-    }
+            background: var(--card);
 
-    .purple {
-      color: var(--purple);
-    }
+            transition:
+                transform 0.25s ease,
+                border 0.25s ease;
+        }
 
-    .comment {
-      color: #505c6b;
-    }
+        .stat:hover {
+            transform: translateY(-4px);
+            border-color: rgba(101, 230, 168, 0.25);
+        }
 
-    .terminal-line {
-      white-space: nowrap;
-    }
+        .stat-number {
+            color: var(--green);
 
+            font-family: "Courier New", monospace;
+            font-size: 22px;
+            font-weight: 700;
+        }
 
-    /* =========================================================
-       GENERAL SECTION
-    ========================================================= */
+        .stat-label {
+            color: var(--text-soft);
+            font-size: 13px;
+        }
 
-    section {
-      padding: 120px 0;
-    }
+        /* ================================
+           SKILLS
+        ================================= */
 
-    .section-heading {
-      margin-bottom: 60px;
-    }
+        .skills-grid {
+            display: grid;
 
-    /*
-      IMPORTANT:
-      No numeric prefixes.
-      Strong large headings.
-    */
+            grid-template-columns: repeat(3, 1fr);
 
-    .section-heading h2 {
-      font-size: clamp(
-        42px,
-        5.5vw,
-        64px
-      );
+            gap: 15px;
+        }
 
-      line-height: 1;
+        .skill-card {
+            min-height: 245px;
 
-      letter-spacing: -3px;
+            padding: 27px;
 
-      font-weight: 800;
+            border: 1px solid var(--border);
+            border-radius: 13px;
 
-      margin-bottom: 20px;
-    }
+            background: var(--card);
 
-    .section-heading p {
-      max-width: 650px;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border 0.25s ease;
+        }
 
-      color: var(--text);
+        .skill-card:hover {
+            transform: translateY(-5px);
 
-      font-size: 15px;
+            background: var(--card-hover);
 
-      line-height: 1.8;
-    }
+            border-color: rgba(101, 230, 168, 0.2);
+        }
 
-    .section-accent {
-      width: 42px;
-      height: 3px;
+        .skill-icon {
+            width: 45px;
+            height: 45px;
 
-      background: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-      margin-bottom: 22px;
+            margin-bottom: 22px;
 
-      border-radius: 99px;
-    }
+            border: 1px solid rgba(101, 230, 168, 0.18);
+            border-radius: 10px;
 
+            color: var(--green);
 
-    /* =========================================================
-       ABOUT
-    ========================================================= */
+            background: rgba(101, 230, 168, 0.06);
 
-    #about {
-      border-top:
-        1px solid var(--border);
-    }
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            font-weight: 700;
+        }
 
-    .about-grid {
-      display: grid;
+        .skill-card h3 {
+            margin-bottom: 12px;
 
-      grid-template-columns:
-        0.72fr
-        1.28fr;
+            font-size: 18px;
+        }
 
-      gap: 100px;
+        .skill-card p {
+            color: var(--text-muted);
 
-      align-items: start;
-    }
+            font-size: 14px;
+            line-height: 1.8;
+        }
 
-    .about-intro h3 {
-      font-size: 28px;
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
 
-      line-height: 1.2;
+            gap: 7px;
 
-      letter-spacing: -1px;
+            margin-top: 20px;
+        }
 
-      max-width: 400px;
-    }
+        .skill-tag {
+            padding: 5px 9px;
 
-    .about-intro h3 span {
-      color: var(--green);
-    }
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 5px;
 
-    .about-content {
-      color: var(--text);
+            color: #aeb7c2;
 
-      font-size: 16px;
+            background: rgba(255, 255, 255, 0.025);
 
-      line-height: 1.9;
-    }
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+        }
 
-    .about-content p + p {
-      margin-top: 21px;
-    }
+        /* ================================
+           EXPERIENCE
+        ================================= */
 
-    .about-content strong {
-      color: var(--white);
-    }
+        .experience {
+            position: relative;
 
-    .about-content .highlight {
-      color: var(--green);
-      font-weight: 600;
-    }
+            margin-left: 15px;
+        }
 
-    .about-stats {
-      display: grid;
+        .experience::before {
+            content: "";
 
-      grid-template-columns:
-        repeat(4, 1fr);
+            position: absolute;
 
-      gap: 12px;
+            top: 0;
+            bottom: 0;
+            left: 7px;
 
-      margin-top: 38px;
-    }
+            width: 1px;
 
-    .stat {
-      padding: 20px 17px;
+            background: rgba(255, 255, 255, 0.09);
+        }
 
-      min-height: 105px;
+        .experience-item {
+            position: relative;
 
-      border:
-        1px solid var(--border);
+            padding-left: 48px;
+            padding-bottom: 65px;
+        }
 
-      border-radius: 13px;
+        .experience-item:last-child {
+            padding-bottom: 0;
+        }
 
-      background:
-        rgba(255,255,255,0.018);
-    }
+        .experience-dot {
+            position: absolute;
 
-    .stat-value {
-      display: block;
+            left: 0;
+            top: 4px;
 
-      font-size: 22px;
+            width: 15px;
+            height: 15px;
 
-      font-weight: 750;
+            border: 3px solid var(--bg);
 
-      margin-bottom: 5px;
-    }
+            border-radius: 50%;
 
-    .stat-label {
-      display: block;
+            background: var(--green);
 
-      font-family: var(--mono);
+            box-shadow:
+                0 0 0 1px rgba(101, 230, 168, 0.3),
+                0 0 18px rgba(101, 230, 168, 0.18);
+        }
 
-      color: var(--muted);
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
 
-      font-size: 9px;
+            margin-bottom: 5px;
+        }
 
-      letter-spacing: 0.4px;
-    }
+        .experience-header h3 {
+            font-size: 22px;
+        }
 
+        .experience-date {
+            color: var(--green);
 
-    /* =========================================================
-       SKILLS
-    ========================================================= */
+            font-family: "Courier New", monospace;
+            font-size: 12px;
 
-    #skills {
-      background: var(--bg-soft);
+            white-space: nowrap;
+        }
 
-      border-top:
-        1px solid var(--border);
+        .experience-company {
+            margin-bottom: 18px;
 
-      border-bottom:
-        1px solid var(--border);
-    }
+            color: var(--blue);
 
-    .skills-grid {
-      display: grid;
+            font-size: 14px;
+        }
 
-      grid-template-columns:
-        repeat(4, 1fr);
+        .experience-item ul {
+            padding-left: 18px;
+        }
 
-      gap: 14px;
-    }
+        .experience-item li {
+            margin-bottom: 9px;
 
-    .skill-card {
-      min-height: 185px;
+            color: var(--text-soft);
 
-      padding: 25px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
 
-      background: var(--card);
+        /* ================================
+           PROJECTS
+        ================================= */
 
-      border:
-        1px solid var(--border);
+        .projects-grid {
+            display: grid;
 
-      border-radius: 15px;
+            grid-template-columns: repeat(2, 1fr);
 
-      transition: 0.3s ease;
-    }
+            gap: 16px;
+        }
 
-    .skill-card:hover {
-      transform: translateY(-5px);
+        .project-card {
+            position: relative;
 
-      background: var(--card-hover);
+            padding: 30px;
 
-      border-color:
-        rgba(101,230,168,0.25);
-    }
+            border: 1px solid var(--border);
+            border-radius: 14px;
 
-    .skill-symbol {
-      width: 39px;
-      height: 39px;
+            background: var(--card);
 
-      display: grid;
+            overflow: hidden;
 
-      place-items: center;
+            transition:
+                transform 0.3s ease,
+                border 0.3s ease;
+        }
 
-      margin-bottom: 21px;
+        .project-card:hover {
+            transform: translateY(-6px);
 
-      border:
-        1px solid rgba(101,230,168,0.2);
+            border-color: rgba(101, 230, 168, 0.25);
+        }
 
-      border-radius: 9px;
+        .project-card.featured {
+            grid-column: span 2;
+        }
 
-      color: var(--green);
+        .project-card::before {
+            content: "";
 
-      font-family: var(--mono);
+            position: absolute;
 
-      font-size: 11px;
-    }
+            width: 180px;
+            height: 180px;
 
-    .skill-card h3 {
-      font-size: 16px;
+            top: -90px;
+            right: -90px;
 
-      margin-bottom: 9px;
-    }
+            background: rgba(101, 230, 168, 0.06);
 
-    .skill-card p {
-      color: var(--muted);
+            filter: blur(40px);
 
-      font-size: 12px;
+            border-radius: 50%;
+        }
 
-      line-height: 1.7;
-    }
+        .project-top {
+            display: flex;
 
+            align-items: center;
+            justify-content: space-between;
 
-    /* =========================================================
-       EXPERIENCE
-    ========================================================= */
+            margin-bottom: 25px;
+        }
 
-    #experience {
-      border-bottom:
-        1px solid var(--border);
-    }
+        .project-type {
+            color: var(--green);
 
-    .experience-list {
-      border-top:
-        1px solid var(--border);
-    }
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            font-weight: 700;
 
-    .experience-item {
-      display: grid;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
 
-      grid-template-columns:
-        220px
-        1fr;
+        .project-link {
+            width: 36px;
+            height: 36px;
 
-      gap: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-      padding: 38px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
 
-      border-bottom:
-        1px solid var(--border);
-    }
+            color: var(--text-soft);
 
-    .experience-date {
-      color: var(--muted);
+            transition: 0.25s ease;
+        }
 
-      font-family: var(--mono);
+        .project-link:hover {
+            color: var(--green);
+            border-color: rgba(101, 230, 168, 0.3);
+        }
 
-      font-size: 11px;
+        .project-card h3 {
+            margin-bottom: 13px;
 
-      padding-top: 5px;
-    }
+            font-size: 25px;
+            letter-spacing: -0.8px;
+        }
 
-    .experience-title {
-      font-size: 24px;
+        .project-card p {
+            max-width: 720px;
 
-      letter-spacing: -0.6px;
+            margin-bottom: 22px;
 
-      margin-bottom: 5px;
-    }
+            color: var(--text-soft);
 
-    .experience-company {
-      color: var(--green);
+            font-size: 14px;
+            line-height: 1.85;
+        }
 
-      font-family: var(--mono);
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
 
-      font-size: 11px;
+            gap: 7px;
+        }
 
-      margin-bottom: 18px;
-    }
+        .project-tag {
+            padding: 5px 9px;
 
-    .experience-description {
-      max-width: 760px;
+            border-radius: 5px;
 
-      color: var(--text);
+            background: rgba(255, 255, 255, 0.035);
 
-      font-size: 14px;
+            color: #aeb7c2;
 
-      line-height: 1.8;
-    }
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+        }
 
-    .experience-points {
-      margin-top: 16px;
+        /* ================================
+           CONTACT
+        ================================= */
 
-      padding-left: 18px;
+        .contact-wrapper {
+            position: relative;
 
-      color: var(--text);
+            padding: 70px 60px;
 
-      font-size: 13px;
-    }
+            border: 1px solid rgba(101, 230, 168, 0.15);
+            border-radius: 18px;
 
-    .experience-points li {
-      margin-bottom: 7px;
-    }
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(101, 230, 168, 0.08),
+                    transparent 35%
+                ),
+                #0c1219;
 
+            overflow: hidden;
+        }
 
-    /* =========================================================
-       PROJECTS
-    ========================================================= */
+        .contact-wrapper h2 {
+            max-width: 700px;
 
-    #projects {
-      background: var(--bg-soft);
+            margin-bottom: 18px;
 
-      border-bottom:
-        1px solid var(--border);
-    }
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.05;
 
-    .projects-grid {
-      display: grid;
+            letter-spacing: -2.5px;
+        }
 
-      grid-template-columns:
-        repeat(2, 1fr);
+        .contact-wrapper > p {
+            max-width: 650px;
 
-      gap: 16px;
-    }
+            margin-bottom: 32px;
 
-    .project {
-      min-height: 350px;
+            color: var(--text-soft);
 
-      padding: 30px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
 
-      display: flex;
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
 
-      flex-direction: column;
+            gap: 10px;
+        }
 
-      position: relative;
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
 
-      overflow: hidden;
+            padding: 11px 15px;
 
-      background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
 
-      border:
-        1px solid var(--border);
+            color: var(--text-soft);
 
-      border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.025);
 
-      transition: 0.3s ease;
-    }
+            font-size: 13px;
 
-    .project:hover {
-      transform: translateY(-5px);
+            transition: 0.25s ease;
+        }
 
-      border-color:
-        rgba(101,230,168,0.25);
-    }
+        .contact-link:hover {
+            color: var(--green);
 
-    .project.featured {
-      grid-column: span 2;
+            border-color: rgba(101, 230, 168, 0.25);
 
-      min-height: 390px;
-    }
+            background: rgba(101, 230, 168, 0.05);
+        }
 
-    .project::after {
-      content: "";
+        /* ================================
+           FOOTER
+        ================================= */
 
-      position: absolute;
+        footer {
+            width: min(100% - 40px, var(--max-width));
 
-      width: 260px;
-      height: 260px;
+            margin: auto;
 
-      top: -160px;
-      right: -100px;
+            padding: 35px 0;
 
-      border-radius: 50%;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
 
-      background: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-      opacity: 0.035;
+            color: var(--text-muted);
 
-      filter: blur(35px);
-    }
+            font-size: 12px;
+        }
 
-    .project-top {
-      display: flex;
+        footer span {
+            color: var(--green);
+        }
 
-      justify-content: space-between;
+        /* ================================
+           MOBILE
+        ================================= */
 
-      margin-bottom: 38px;
-    }
+        @media (max-width: 900px) {
 
-    .project-type {
-      color: var(--green);
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
 
-      font-family: var(--mono);
+                padding-top: 130px;
+            }
 
-      font-size: 10px;
+            .terminal {
+                max-width: 700px;
+            }
 
-      letter-spacing: 1px;
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
 
-      text-transform: uppercase;
-    }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-    .project-arrow {
-      color: var(--muted);
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
 
-      font-size: 20px;
-    }
+            .project-card.featured {
+                grid-column: span 1;
+            }
+        }
 
-    .project h3 {
-      font-size: 27px;
+        @media (max-width: 700px) {
 
-      letter-spacing: -1px;
+            nav {
+                height: 65px;
+            }
 
-      margin-bottom: 15px;
-    }
+            .nav-container {
+                width: min(100% - 28px, var(--max-width));
+            }
 
-    .project p {
-      max-width: 800px;
+            .logo {
+                font-size: 16px;
+            }
 
-      color: var(--text);
+            .nav-links {
+                display: none;
+            }
 
-      font-size: 14px;
+            .hero {
+                width: min(100% - 28px, var(--max-width));
 
-      line-height: 1.8;
-    }
+                padding-top: 110px;
+                padding-bottom: 55px;
+            }
 
-    .tech-stack {
-      display: flex;
+            .hero h1 {
+                font-size: clamp(45px, 14vw, 65px);
+                letter-spacing: -3px;
+            }
 
-      flex-wrap: wrap;
+            .hero-description {
+                font-size: 16px;
+            }
 
-      gap: 7px;
+            .section {
+                width: min(100% - 28px, var(--max-width));
 
-      margin-top: auto;
+                padding: 80px 0;
+            }
 
-      padding-top: 28px;
-    }
+            .section-heading {
+                margin-bottom: 38px;
+            }
 
-    .tech {
-      padding: 6px 9px;
+            .section-heading h2 {
+                font-size: 40px;
+            }
 
-      border:
-        1px solid var(--border);
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
 
-      border-radius: 6px;
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
 
-      color: var(--muted);
+            .experience-header {
+                flex-direction: column;
+                gap: 4px;
+            }
 
-      background:
-        rgba(255,255,255,0.02);
+            .experience-date {
+                white-space: normal;
+            }
 
-      font-family: var(--mono);
+            .contact-wrapper {
+                padding: 45px 25px;
+            }
 
-      font-size: 9px;
-    }
+            .contact-wrapper h2 {
+                font-size: 40px;
+            }
 
-    .project-link {
-      width: fit-content;
+            footer {
+                width: min(100% - 28px, var(--max-width));
 
-      margin-top: 20px;
+                flex-direction: column;
+                gap: 10px;
 
-      color: var(--green);
+                text-align: center;
+            }
+        }
 
-      font-family: var(--mono);
+        @media (max-width: 420px) {
 
-      font-size: 11px;
-    }
+            .stats {
+                grid-template-columns: 1fr;
+            }
 
-    .project-link:hover {
-      text-decoration: underline;
-    }
+            .terminal-body {
+                padding: 22px 17px;
+                font-size: 11px;
+            }
 
+            .terminal-key {
+                min-width: 100px;
+            }
 
-    /* =========================================================
-       CONTACT
-    ========================================================= */
+            .project-card,
+            .skill-card {
+                padding: 23px;
+            }
+        }
 
-    #contact {
-      padding: 130px 0;
-    }
+        /* ================================
+           ANIMATIONS
+        ================================= */
 
-    .contact-box {
-      position: relative;
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
 
-      overflow: hidden;
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
 
-      padding: 70px;
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-      border:
-        1px solid rgba(101,230,168,0.16);
-
-      border-radius: 23px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(101,230,168,0.065),
-          rgba(255,255,255,0.012)
-        );
-    }
-
-    .contact-box::before {
-      content: "";
-
-      position: absolute;
-
-      width: 400px;
-      height: 400px;
-
-      right: -200px;
-      bottom: -250px;
-
-      border-radius: 50%;
-
-      background: var(--green);
-
-      opacity: 0.045;
-
-      filter: blur(55px);
-    }
-
-    .contact-content {
-      position: relative;
-
-      z-index: 2;
-
-      display: flex;
-
-      align-items: flex-end;
-
-      justify-content: space-between;
-
-      gap: 50px;
-    }
-
-    .contact-title {
-      max-width: 700px;
-
-      font-size: clamp(
-        42px,
-        5.5vw,
-        68px
-      );
-
-      line-height: 0.98;
-
-      letter-spacing: -3px;
-
-      margin-bottom: 20px;
-    }
-
-    .contact-description {
-      max-width: 600px;
-
-      color: var(--text);
-
-      font-size: 15px;
-
-      line-height: 1.8;
-    }
-
-    .contact-links {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 9px;
-    }
-
-    .contact-link {
-      display: inline-flex;
-
-      align-items: center;
-
-      padding: 11px 15px;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 9px;
-
-      color: var(--text);
-
-      font-family: var(--mono);
-
-      font-size: 10px;
-
-      white-space: nowrap;
-
-      transition: 0.25s ease;
-    }
-
-    .contact-link:hover {
-      color: var(--green);
-
-      border-color:
-        rgba(101,230,168,0.3);
-
-      background:
-        var(--green-soft);
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      padding: 28px 0;
-
-      border-top:
-        1px solid var(--border);
-    }
-
-    .footer-content {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-    }
-
-    .footer-text {
-      color: var(--muted);
-
-      font-size: 11px;
-    }
-
-    .footer-code {
-      color: var(--muted);
-
-      font-family: var(--mono);
-
-      font-size: 10px;
-    }
-
-    .footer-code span {
-      color: var(--green);
-    }
-
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 1050px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-      }
-
-      .terminal {
-        max-width: 600px;
-
-        margin-left: 0;
-
-        transform: none;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-      .skills-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .about-stats {
-        grid-template-columns:
-          repeat(4, 1fr);
-      }
-
-      .contact-content {
-        align-items: flex-start;
-
-        flex-direction: column;
-      }
-    }
-
-
-    @media (max-width: 750px) {
-
-      .container {
-        width:
-          min(
-            100% - 28px,
-            var(--max-width)
-          );
-      }
-
-      .navbar {
-        height: 68px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: auto;
-
-        padding:
-          120px 0
-          90px;
-      }
-
-      .hero h1 {
-        font-size:
-          clamp(
-            47px,
-            14vw,
-            72px
-          );
-
-        letter-spacing: -3.5px;
-      }
-
-      .hero-description {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 85px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 45px;
-      }
-
-      .section-heading h2 {
-        font-size:
-          clamp(
-            40px,
-            11vw,
-            55px
-          );
-
-        letter-spacing: -2px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-stats {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project.featured {
-        grid-column: span 1;
-      }
-
-      .project {
-        min-height: 330px;
-      }
-
-      .contact-box {
-        padding: 40px 26px;
-      }
-
-      .contact-title {
-        font-size:
-          clamp(
-            42px,
-            12vw,
-            58px
-          );
-
-        letter-spacing: -2px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 10px;
-      }
-    }
-
-
-    @media (max-width: 430px) {
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .about-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .terminal-body {
-        font-size: 11px;
-
-        padding:
-          22px 16px;
-      }
-    }
-
-
-    /* =========================================================
-       ACCESSIBILITY
-    ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-      }
-    }
-
-  </style>
+    </style>
 </head>
-
 
 <body>
 
+    <!-- ================================
+         NAVIGATION
+    ================================= -->
 
-  <!-- =======================================================
-       NAVIGATION
-  ======================================================== -->
+    <nav>
+        <div class="nav-container">
 
-  <header class="navbar">
-
-    <div class="container nav-container">
-
-      <a href="#home" class="logo">
-        anshul<span>.</span>bisht
-      </a>
-
-
-      <nav>
-
-        <ul class="nav-links">
-
-          <li>
-            <a href="#about">
-              About
-            </a>
-          </li>
-
-          <li>
-            <a href="#skills">
-              Skills
-            </a>
-          </li>
-
-          <li>
-            <a href="#experience">
-              Experience
-            </a>
-          </li>
-
-          <li>
-            <a href="#projects">
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contact"
-              class="nav-contact"
-            >
-              Let's Talk
-            </a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-
-  <!-- =======================================================
-       HERO
-    ======================================================== -->
-
-  <main>
-
-    <section
-      class="hero"
-      id="home"
-    >
-
-      <div class="container hero-grid">
-
-
-        <div class="hero-content">
-
-          <div class="hero-label">
-
-            <span class="pulse"></span>
-
-            AI DEVELOPER · PYTHON · BACKEND
-
-          </div>
-
-
-          <h1>
-
-            Building
-
-            <span class="green">
-              intelligent
-            </span>
-
-            software for the real world.
-
-          </h1>
-
-
-          <p class="hero-description">
-
-            I'm <strong>Anshul Bisht</strong> —
-            an <strong>AI Developer & Python Backend Engineer</strong>
-            focused on building backend systems, REST APIs,
-            machine learning solutions and practical AI-powered
-            applications.
-
-          </p>
-
-
-          <div class="hero-buttons">
-
-            <a
-              href="#projects"
-              class="button button-primary"
-            >
-              View My Work →
+            <a href="#home" class="logo">
+                anshul<span>.dev</span>
             </a>
 
-            <a
-              href="#contact"
-              class="button button-secondary"
-            >
-              Let's Connect
-            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
 
-          </div>
+                <a href="#contact" class="nav-button">
+                    Let's Talk
+                </a>
+            </div>
 
         </div>
+    </nav>
 
 
+    <!-- ================================
+         HERO
+    ================================= -->
 
-        <!-- Developer Terminal -->
+    <main id="home">
 
-        <div class="terminal">
+        <section class="hero">
 
-          <div class="terminal-top">
+            <div class="hero-content fade-up">
 
-            <span class="terminal-dot"></span>
+                <div class="eyebrow">
+                    PYTHON DEVELOPER · BACKEND · AI/ML
+                </div>
 
-            <span class="terminal-dot"></span>
+                <h1>
+                    Building reliable
+                    <span>software</span>
+                    with Python.
+                </h1>
 
-            <span class="terminal-dot"></span>
+                <p class="hero-description">
+                    I'm <strong>Anshul Bisht</strong> — a Python Developer
+                    focused on backend development, REST APIs, databases
+                    and practical software solutions.
+                    <br><br>
+                    I also work with <strong>AI, Machine Learning</strong>
+                    and modern AI-assisted development tools to build
+                    smarter and more efficient applications.
+                </p>
 
-            <span class="terminal-file">
-              anshul_ai.py
-            </span>
+                <div class="hero-buttons">
 
-          </div>
+                    <a href="#projects" class="btn btn-primary">
+                        View My Work
+                    </a>
 
+                    <a href="#contact" class="btn btn-secondary">
+                        Let's Connect
+                    </a>
 
-          <div class="terminal-body">
-
-            <div class="terminal-line">
-
-              <span class="blue">
-                class
-              </span>
-
-              AnshulBisht:
-
-            </div>
-
-
-            <div class="terminal-line">
-
-              &nbsp;&nbsp;role =
-
-              <span class="green">
-                "AI Developer"
-              </span>
-
-            </div>
-
-
-            <div class="terminal-line">
-
-              &nbsp;&nbsp;backend =
-
-              <span class="green">
-                "Python"
-              </span>
+                </div>
 
             </div>
 
 
-            <div class="terminal-line">
+            <!-- TERMINAL -->
 
-              &nbsp;&nbsp;specialization =
+            <div class="terminal fade-up">
 
-              <span class="green">
-                "Backend + AI"
-              </span>
+                <div class="terminal-top">
 
-            </div>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
 
+                    <span class="terminal-title">
+                        anshul_profile.py
+                    </span>
 
-            <br />
+                </div>
 
+                <div class="terminal-body">
 
-            <div class="terminal-line">
+                    <div class="terminal-line">
+                        <span class="terminal-key">name</span>
+                        <span class="terminal-value">
+                            "Anshul Bisht"
+                        </span>
+                    </div>
 
-              &nbsp;&nbsp;
+                    <div class="terminal-line">
+                        <span class="terminal-key">role</span>
+                        <span class="terminal-value green">
+                            "Python Developer"
+                        </span>
+                    </div>
 
-              <span class="blue">
-                def
-              </span>
+                    <div class="terminal-line">
+                        <span class="terminal-key">backend</span>
+                        <span class="terminal-value blue">
+                            "Python + Django"
+                        </span>
+                    </div>
 
-              <span class="purple">
-                build
-              </span>(self):
+                    <div class="terminal-line">
+                        <span class="terminal-key">experience</span>
+                        <span class="terminal-value">
+                            "REST APIs + SQL"
+                        </span>
+                    </div>
 
-            </div>
+                    <div class="terminal-line">
+                        <span class="terminal-key">projects</span>
+                        <span class="terminal-value">
+                            "CRM + ML + APIs"
+                        </span>
+                    </div>
 
+                    <div class="terminal-line">
+                        <span class="terminal-key">also_work_with</span>
+                        <span class="terminal-value purple">
+                            "AI + ML"
+                        </span>
+                    </div>
 
-            <div class="terminal-line">
+                    <div class="terminal-line">
+                        <span class="terminal-key">status</span>
+                        <span class="terminal-value green">
+                            "Open to opportunities"
+                            <span class="cursor"></span>
+                        </span>
+                    </div>
 
-              &nbsp;&nbsp;&nbsp;&nbsp;
-
-              <span class="blue">
-                return
-              </span>
-
-              [
-
-            </div>
-
-
-            <div class="terminal-line">
-
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-              <span class="green">
-                "Python"
-              </span>,
-
-            </div>
-
-
-            <div class="terminal-line">
-
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-              <span class="green">
-                "REST APIs"
-              </span>,
-
-            </div>
-
-
-            <div class="terminal-line">
-
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-              <span class="green">
-                "Machine Learning"
-              </span>,
+                </div>
 
             </div>
 
+        </section>
 
-            <div class="terminal-line">
 
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- ================================
+             ABOUT
+        ================================= -->
 
-              <span class="green">
-                "AI"
-              </span>
+        <section id="about" class="section">
 
-            </div>
+            <div class="section-heading fade-up">
 
-
-            <div class="terminal-line">
-
-              &nbsp;&nbsp;&nbsp;&nbsp;]
-
-            </div>
-
-
-            <br />
-
-
-            <div class="terminal-line">
-
-              <span class="comment">
-                # learn → build → improve
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         ABOUT ME
-    ======================================================== -->
-
-    <section
-      id="about"
-      class="about"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <div class="section-accent"></div>
-
-          <h2>
-            About Me
-          </h2>
-
-          <p>
-            A developer combining backend engineering,
-            AI/ML and practical product thinking.
-          </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-
-          <div class="about-intro">
-
-            <h3>
-
-              I don't just want to
-              <span>write code.</span>
-
-              I want to build
-              useful systems.
-
-            </h3>
-
-          </div>
-
-
-
-          <div class="about-content">
-
-            <p>
-
-              I'm a Computer Science graduate and
-              <strong>AI Developer & Python Backend Engineer</strong>
-              focused on creating reliable, maintainable and
-              useful software.
-
-            </p>
-
-
-            <p>
-
-              My development experience includes
-              <strong>Python, backend applications, REST APIs,
-              SQL, Django, CRUD systems and data-driven
-              applications</strong>.
-              I'm also interested in applying machine learning
-              and AI to solve practical problems.
-
-            </p>
-
-
-            <p>
-
-              Before focusing on software development,
-              I worked professionally in
-              <strong>SEO and website optimization</strong>.
-              That experience gave me practical knowledge of
-              technical SEO, website architecture, indexing,
-              page speed, Core Web Vitals and user experience.
-
-            </p>
-
-
-            <p>
-
-              I consider that SEO experience an advantage
-              when developing websites and software products.
-              I understand that a technically strong website
-              is not enough — its
-              <span class="highlight">
-                performance, architecture, discoverability
-                and user experience
-              </span>
-              also matter.
-
-            </p>
-
-
-            <p>
-
-              Today, I combine these perspectives with
-              AI-assisted development, modern LLM tools and
-              machine learning to build software that is not
-              only functional, but also
-              <strong>efficient, scalable and useful.</strong>
-
-            </p>
-
-
-
-            <div class="about-stats">
-
-
-              <div class="stat">
-
-                <span class="stat-value">
-                  Python
+                <span class="small-label">
+                    About Me
                 </span>
 
-                <span class="stat-label">
-                  CORE LANGUAGE
+                <h2>
+                    Python is my core.
+                </h2>
+
+                <p>
+                    I build practical software with a strong focus on
+                    backend development, clean architecture and useful
+                    real-world applications.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-content fade-up">
+
+                    <h3>
+                        Python Developer with a
+                        <span>broader technical toolkit.</span>
+                    </h3>
+
+                    <p>
+                        My primary profile is
+                        <strong>Python Developer</strong>.
+                        I work with Python to build backend applications,
+                        REST APIs, database-driven systems and software
+                        solutions that solve practical problems.
+                    </p>
+
+                    <p>
+                        My backend toolkit includes
+                        <strong>Python, Django, SQL, JSON, REST APIs,
+                        CRUD operations and Git/GitHub</strong>.
+                        I also have experience building desktop applications
+                        using PySide6 and Tkinter.
+                    </p>
+
+                    <p>
+                        Alongside Python development, I can work with
+                        <strong>AI and Machine Learning</strong>.
+                        My additional experience includes machine learning,
+                        NLP-based projects and AI-assisted development
+                        workflows.
+                    </p>
+
+                    <p>
+                        I also bring experience from the SEO side of
+                        software and websites. My SEO background includes
+                        technical SEO, website architecture, indexing,
+                        page performance, Core Web Vitals and UX.
+                    </p>
+
+                    <p>
+                        That experience gives me another perspective when
+                        building software and websites: I don't only think
+                        about whether something works — I also consider
+                        <strong>performance, architecture, usability,
+                        discoverability and the overall user experience.</strong>
+                    </p>
+
+                    <div class="about-highlight">
+
+                        <p>
+                            // core → Python Development<br>
+                            // backend → APIs + Django + SQL<br>
+                            // additional → AI × ML<br>
+                            // perspective → Software + Web + SEO
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stats fade-up">
+
+                    <div class="stat">
+                        <span class="stat-number">
+                            Python
+                        </span>
+
+                        <span class="stat-label">
+                            CORE DEVELOPMENT
+                        </span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-number">
+                            Backend
+                        </span>
+
+                        <span class="stat-label">
+                            APIs · Django · SQL
+                        </span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-number">
+                            AI × ML
+                        </span>
+
+                        <span class="stat-label">
+                            ADDITIONAL SKILLS
+                        </span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-number">
+                            SEO
+                        </span>
+
+                        <span class="stat-label">
+                            WEB PERFORMANCE
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             SKILLS
+        ================================= -->
+
+        <section id="skills" class="section">
+
+            <div class="section-heading fade-up">
+
+                <span class="small-label">
+                    Skills & Expertise
                 </span>
 
-              </div>
+                <h2>
+                    Tools I use to build.
+                </h2>
+
+                <p>
+                    A practical combination of programming, backend,
+                    databases, data, AI/ML and development tools.
+                </p>
+
+            </div>
 
 
-              <div class="stat">
+            <div class="skills-grid">
 
-                <span class="stat-value">
-                  AI
+
+                <!-- PYTHON -->
+
+                <div class="skill-card fade-up">
+
+                    <div class="skill-icon">
+                        Py
+                    </div>
+
+                    <h3>
+                        Python Development
+                    </h3>
+
+                    <p>
+                        Python is my primary development language,
+                        with experience building applications,
+                        APIs and software solutions.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">OOP</span>
+                        <span class="skill-tag">DSA</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+
+                </div>
+
+
+                <!-- BACKEND -->
+
+                <div class="skill-card fade-up">
+
+                    <div class="skill-icon">
+                        API
+                    </div>
+
+                    <h3>
+                        Backend Development
+                    </h3>
+
+                    <p>
+                        Building backend logic, CRUD systems,
+                        APIs and database-connected applications.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">REST</span>
+                        <span class="skill-tag">CRUD</span>
+                        <span class="skill-tag">JSON</span>
+                    </div>
+
+                </div>
+
+
+                <!-- DATABASE -->
+
+                <div class="skill-card fade-up">
+
+                    <div class="skill-icon">
+                        DB
+                    </div>
+
+                    <h3>
+                        Databases & Data
+                    </h3>
+
+                    <p>
+                        Working with structured data, SQL databases
+                        and Python data-processing libraries.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                    </div>
+
+                </div>
+
+
+                <!-- AI ML -->
+
+                <div class="skill-card fade-up">
+
+                    <div class="skill-icon">
+                        ML
+                    </div>
+
+                    <h3>
+                        AI & Machine Learning
+                    </h3>
+
+                    <p>
+                        Additional experience working with machine
+                        learning, NLP and AI-assisted development.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">TF-IDF</span>
+                        <span class="skill-tag">LLMs</span>
+                    </div>
+
+                </div>
+
+
+                <!-- DEVELOPMENT -->
+
+                <div class="skill-card fade-up">
+
+                    <div class="skill-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
+                        Development Tools
+                    </h3>
+
+                    <p>
+                        Tools and technologies I use to build,
+                        manage and improve software projects.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">PySide6</span>
+                        <span class="skill-tag">Tkinter</span>
+                    </div>
+
+                </div>
+
+
+                <!-- WEB -->
+
+                <div class="skill-card fade-up">
+
+                    <div class="skill-icon">
+                        Web
+                    </div>
+
+                    <h3>
+                        Web & SEO
+                    </h3>
+
+                    <p>
+                        Experience combining development with
+                        technical SEO, performance and website UX.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Technical SEO</span>
+                        <span class="skill-tag">Core Web Vitals</span>
+                        <span class="skill-tag">UX</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             EXPERIENCE
+        ================================= -->
+
+        <section id="experience" class="section">
+
+            <div class="section-heading fade-up">
+
+                <span class="small-label">
+                    Experience
                 </span>
 
-                <span class="stat-label">
-                  DEVELOPMENT FOCUS
+                <h2>
+                    Where I've worked.
+                </h2>
+
+                <p>
+                    Experience across Python development and
+                    website optimization.
+                </p>
+
+            </div>
+
+
+            <div class="experience">
+
+
+                <!-- FACTONIX -->
+
+                <div class="experience-item fade-up">
+
+                    <div class="experience-dot"></div>
+
+                    <div class="experience-header">
+
+                        <h3>
+                            Python Developer Intern
+                        </h3>
+
+                        <span class="experience-date">
+                            Apr 2026 — Present
+                        </span>
+
+                    </div>
+
+                    <div class="experience-company">
+                        Factonix Technologies
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Developing backend applications and
+                            Python-based software solutions.
+                        </li>
+
+                        <li>
+                            Working with REST APIs, SQL/JSON data,
+                            CRUD operations and database-backed systems.
+                        </li>
+
+                        <li>
+                            Debugging, testing, optimizing and
+                            refactoring application code.
+                        </li>
+
+                        <li>
+                            Working with practical software development
+                            workflows and reusable backend logic.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ADSROLE -->
+
+                <div class="experience-item fade-up">
+
+                    <div class="experience-dot"></div>
+
+                    <div class="experience-header">
+
+                        <h3>
+                            SEO Executive
+                        </h3>
+
+                        <span class="experience-date">
+                            Jul 2024 — Apr 2026
+                        </span>
+
+                    </div>
+
+                    <div class="experience-company">
+                        AdsRole Private Limited
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Worked on technical SEO, website architecture,
+                            indexing and on-page optimization.
+                        </li>
+
+                        <li>
+                            Conducted keyword research,
+                            competitor analysis and data-driven optimization.
+                        </li>
+
+                        <li>
+                            Collaborated on page speed,
+                            Core Web Vitals and website UX improvements.
+                        </li>
+
+                        <li>
+                            Developed a strong understanding of how
+                            technical implementation affects website
+                            performance and discoverability.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             PROJECTS
+        ================================= -->
+
+        <section id="projects" class="section">
+
+            <div class="section-heading fade-up">
+
+                <span class="small-label">
+                    Featured Projects
                 </span>
 
-              </div>
+                <h2>
+                    Things I've built.
+                </h2>
 
-
-              <div class="stat">
-
-                <span class="stat-value">
-                  Backend
-                </span>
-
-                <span class="stat-label">
-                  ENGINEERING
-                </span>
-
-              </div>
-
-
-              <div class="stat">
-
-                <span class="stat-value">
-                  AI × ML
-                </span>
-
-                <span class="stat-label">
-                  INTELLIGENT SYSTEMS
-                </span>
-
-              </div>
-
+                <p>
+                    Practical projects combining Python,
+                    backend development, data and machine learning.
+                </p>
 
             </div>
 
-          </div>
 
+            <div class="projects-grid">
+
+
+                <!-- CRM -->
+
+                <article class="project-card featured fade-up">
+
+                    <div class="project-top">
+
+                        <span class="project-type">
+                            Featured Project
+                        </span>
+
+                        <a
+                            href="https://github.com/codebisht/academy-crm-management"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                            aria-label="Open Academy CRM GitHub repository"
+                        >
+                            ↗
+                        </a>
+
+                    </div>
+
+                    <h3>
+                        Academy CRM Management Software
+                    </h3>
+
+                    <p>
+                        A practical educational CRM built with Python
+                        for managing admissions, students, fees,
+                        attendance and users. The system includes
+                        role-based authentication, CRUD operations,
+                        dashboard analytics and Excel export.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span class="project-tag">
+                            Python
+                        </span>
+
+                        <span class="project-tag">
+                            Django
+                        </span>
+
+                        <span class="project-tag">
+                            PySide6
+                        </span>
+
+                        <span class="project-tag">
+                            MySQL
+                        </span>
+
+                        <span class="project-tag">
+                            REST API
+                        </span>
+
+                        <span class="project-tag">
+                            JSON
+                        </span>
+
+                        <span class="project-tag">
+                            Matplotlib
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAKE REVIEW -->
+
+                <article class="project-card fade-up">
+
+                    <div class="project-top">
+
+                        <span class="project-type">
+                            Machine Learning
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Fake Product Review Detection
+                    </h3>
+
+                    <p>
+                        A machine learning project for identifying
+                        potentially fake product reviews using NLP
+                        techniques, TF-IDF feature extraction and
+                        classification models.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span class="project-tag">
+                            Python
+                        </span>
+
+                        <span class="project-tag">
+                            NLP
+                        </span>
+
+                        <span class="project-tag">
+                            TF-IDF
+                        </span>
+
+                        <span class="project-tag">
+                            Naive Bayes
+                        </span>
+
+                        <span class="project-tag">
+                            Random Forest
+                        </span>
+
+                        <span class="project-tag">
+                            Scikit-learn
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- WEATHER -->
+
+                <article class="project-card fade-up">
+
+                    <div class="project-top">
+
+                        <span class="project-type">
+                            API Application
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Weather Forecast App
+                    </h3>
+
+                    <p>
+                        A Python desktop application using a weather
+                        REST API to provide real-time weather information,
+                        location search and API error handling through
+                        a simple graphical interface.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span class="project-tag">
+                            Python
+                        </span>
+
+                        <span class="project-tag">
+                            Tkinter
+                        </span>
+
+                        <span class="project-tag">
+                            REST API
+                        </span>
+
+                        <span class="project-tag">
+                            API Integration
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             CONTACT
+        ================================= -->
+
+        <section id="contact" class="section">
+
+            <div class="contact-wrapper fade-up">
+
+                <h2>
+                    Let's build something useful.
+                </h2>
+
+                <p>
+                    I'm open to opportunities where I can work on
+                    Python development, backend systems, APIs,
+                    data-driven applications and practical software
+                    products.
+                </p>
+
+                <div class="contact-links">
+
+                    <a
+                        href="mailto:bishtanshul064@gmail.com"
+                        class="contact-link"
+                    >
+                        ✉ Email
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/anshulbisht15/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                    >
+                        in LinkedIn
+                    </a>
+
+                    <a
+                        href="https://github.com/codebisht"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                    >
+                        ◈ GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div>
+            © 2026 Anshul Bisht
         </div>
 
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         SKILLS
-    ======================================================== -->
-
-    <section
-      id="skills"
-      class="skills"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <div class="section-accent"></div>
-
-          <h2>
-            Skills & Expertise
-          </h2>
-
-          <p>
-            Technologies and areas I use to design,
-            develop and improve software products.
-          </p>
-
+        <div>
+            Built with <span>Python mindset</span> & curiosity.
         </div>
 
+    </footer>
 
-        <div class="skills-grid">
 
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
 
-          <div class="skill-card">
+    <script>
 
-            <div class="skill-symbol">
-              PY
-            </div>
+        /* --------------------------------
+           Reveal animation
+        -------------------------------- */
 
-            <h3>
-              Python
-            </h3>
+        const fadeElements =
+            document.querySelectorAll(".fade-up");
 
-            <p>
-              Core development, OOP, application logic,
-              automation, debugging and backend engineering.
-            </p>
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
 
-          </div>
+                    entries.forEach((entry) => {
 
+                        if (entry.isIntersecting) {
 
-          <div class="skill-card">
+                            entry.target.classList.add("visible");
 
-            <div class="skill-symbol">
-              AI
-            </div>
+                            observer.unobserve(entry.target);
 
-            <h3>
-              AI Development
-            </h3>
+                        }
 
-            <p>
-              AI-assisted development, LLM tools,
-              intelligent workflows and practical AI
-              experimentation.
-            </p>
+                    });
 
-          </div>
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
+        fadeElements.forEach((element) => {
+            observer.observe(element);
+        });
 
-          <div class="skill-card">
 
-            <div class="skill-symbol">
-              ML
-            </div>
+        /* --------------------------------
+           Active navigation
+        -------------------------------- */
 
-            <h3>
-              Machine Learning
-            </h3>
+        const sections =
+            document.querySelectorAll("section[id]");
 
-            <p>
-              Scikit-learn, NLP, feature engineering,
-              model evaluation and ML applications.
-            </p>
+        const navLinks =
+            document.querySelectorAll(".nav-links a");
 
-          </div>
 
+        const sectionObserver =
+            new IntersectionObserver(
+                (entries) => {
 
-          <div class="skill-card">
+                    entries.forEach((entry) => {
 
-            <div class="skill-symbol">
-              API
-            </div>
+                        if (entry.isIntersecting) {
 
-            <h3>
-              REST APIs
-            </h3>
+                            const currentId =
+                                entry.target.getAttribute("id");
 
-            <p>
-              API integration, CRUD operations,
-              JSON data handling and backend services.
-            </p>
+                            navLinks.forEach((link) => {
 
-          </div>
+                                link.classList.remove("active");
 
+                                if (
+                                    link.getAttribute("href") ===
+                                    "#" + currentId
+                                ) {
+                                    link.classList.add("active");
+                                }
 
-          <div class="skill-card">
+                            });
 
-            <div class="skill-symbol">
-              DJ
-            </div>
+                        }
 
-            <h3>
-              Django
-            </h3>
+                    });
 
-            <p>
-              Python web development, backend logic,
-              database-driven applications and APIs.
-            </p>
+                },
+                {
+                    rootMargin: "-35% 0px -55% 0px"
+                }
+            );
 
-          </div>
 
+        sections.forEach((section) => {
+            sectionObserver.observe(section);
+        });
 
-          <div class="skill-card">
 
-            <div class="skill-symbol">
-              SQL
-            </div>
+        /* --------------------------------
+           Smooth anchor handling
+        -------------------------------- */
 
-            <h3>
-              SQL & Databases
-            </h3>
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach((anchor) => {
 
-            <p>
-              MySQL, database-driven applications,
-              structured data and JSON-based storage.
-            </p>
+                anchor.addEventListener(
+                    "click",
+                    function (event) {
 
-          </div>
+                        const targetId =
+                            this.getAttribute("href");
 
+                        const target =
+                            document.querySelector(targetId);
 
-          <div class="skill-card">
+                        if (!target) return;
 
-            <div class="skill-symbol">
-              SEO
-            </div>
+                        event.preventDefault();
 
-            <h3>
-              Technical SEO
-            </h3>
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
 
-            <p>
-              Website architecture, indexing, performance,
-              Core Web Vitals and technical optimization.
-            </p>
+                    }
+                );
 
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-symbol">
-              GIT
-            </div>
-
-            <h3>
-              Git & GitHub
-            </h3>
-
-            <p>
-              Version control, source management and
-              development workflows.
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         EXPERIENCE
-    ======================================================== -->
-
-    <section
-      id="experience"
-      class="experience"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <div class="section-accent"></div>
-
-          <h2>
-            Experience
-          </h2>
-
-          <p>
-            My professional journey across software development,
-            backend engineering and website optimization.
-          </p>
-
-        </div>
-
-
-        <div class="experience-list">
-
-
-          <article class="experience-item">
-
-            <div class="experience-date">
-
-              APR 2026 — PRESENT
-
-            </div>
-
-
-            <div>
-
-              <h3 class="experience-title">
-                Python Developer Intern
-              </h3>
-
-              <div class="experience-company">
-                FACTONIX TECHNOLOGIES
-              </div>
-
-              <p class="experience-description">
-
-                Developing and maintaining Python backend
-                applications with a focus on APIs, databases,
-                CRUD operations and maintainable software
-                architecture.
-
-              </p>
-
-
-              <ul class="experience-points">
-
-                <li>
-                  Develop and maintain scalable Python backend
-                  applications.
-                </li>
-
-                <li>
-                  Design and integrate REST APIs with SQL
-                  databases and JSON data.
-                </li>
-
-                <li>
-                  Debug, test, refactor and optimize applications.
-                </li>
-
-              </ul>
-
-            </div>
-
-          </article>
-
-
-
-          <article class="experience-item">
-
-            <div class="experience-date">
-
-              JUL 2024 — APR 2026
-
-            </div>
-
-
-            <div>
-
-              <h3 class="experience-title">
-                SEO Executive
-              </h3>
-
-              <div class="experience-company">
-                ADSROLE
-              </div>
-
-              <p class="experience-description">
-
-                Worked on technical SEO, website architecture,
-                indexing and data-driven optimization while
-                collaborating with developers.
-
-              </p>
-
-
-              <ul class="experience-points">
-
-                <li>
-                  Improved technical SEO, website architecture
-                  and indexing.
-                </li>
-
-                <li>
-                  Performed keyword research, competitor
-                  analysis and on-page optimization.
-                </li>
-
-                <li>
-                  Collaborated with developers on page speed,
-                  Core Web Vitals and user experience.
-                </li>
-
-              </ul>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         PROJECTS
-    ======================================================== -->
-
-    <section
-      id="projects"
-      class="projects"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <div class="section-accent"></div>
-
-          <h2>
-            Featured Projects
-          </h2>
-
-          <p>
-            Selected projects demonstrating my experience
-            across backend development, APIs, machine learning
-            and application development.
-          </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-          <!-- Academy CRM -->
-
-          <article class="project featured">
-
-            <div class="project-top">
-
-              <span class="project-type">
-                Featured Project
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
-            </div>
-
-
-            <h3>
-              Academy CRM Management Software
-            </h3>
-
-
-            <p>
-
-              A comprehensive CRM platform for educational
-              institutes covering admissions, fee collection,
-              attendance and user management.
-
-              The system includes role-based authentication,
-              REST APIs, CRUD operations, dashboard analytics,
-              Excel export and database-backed data handling.
-
-            </p>
-
-
-            <div class="tech-stack">
-
-              <span class="tech">
-                Python
-              </span>
-
-              <span class="tech">
-                Django
-              </span>
-
-              <span class="tech">
-                PySide6
-              </span>
-
-              <span class="tech">
-                MySQL
-              </span>
-
-              <span class="tech">
-                JSON
-              </span>
-
-              <span class="tech">
-                REST API
-              </span>
-
-              <span class="tech">
-                Matplotlib
-              </span>
-
-            </div>
-
-
-            <a
-              href="https://github.com/codebisht/academy-crm-management"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              View GitHub Repository →
-            </a>
-
-          </article>
-
-
-
-          <!-- Fake Review Detection -->
-
-          <article class="project">
-
-            <div class="project-top">
-
-              <span class="project-type">
-                Machine Learning
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
-            </div>
-
-
-            <h3>
-              Fake Product Review Detection
-            </h3>
-
-
-            <p>
-
-              An NLP-based machine learning system that
-              classifies fake product reviews using text
-              preprocessing, TF-IDF feature extraction,
-              Naive Bayes and Random Forest models.
-
-            </p>
-
-
-            <div class="tech-stack">
-
-              <span class="tech">
-                Python
-              </span>
-
-              <span class="tech">
-                NLP
-              </span>
-
-              <span class="tech">
-                TF-IDF
-              </span>
-
-              <span class="tech">
-                Naive Bayes
-              </span>
-
-              <span class="tech">
-                Random Forest
-              </span>
-
-              <span class="tech">
-                Scikit-learn
-              </span>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- Weather Application -->
-
-          <article class="project">
-
-            <div class="project-top">
-
-              <span class="project-type">
-                Application Development
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
-            </div>
-
-
-            <h3>
-              Weather Forecast Application
-            </h3>
-
-
-            <p>
-
-              A Python application integrating REST APIs
-              to provide real-time weather forecasts,
-              location-based search, responsive UI and
-              robust API error handling.
-
-            </p>
-
-
-            <div class="tech-stack">
-
-              <span class="tech">
-                Python
-              </span>
-
-              <span class="tech">
-                Tkinter
-              </span>
-
-              <span class="tech">
-                REST API
-              </span>
-
-              <span class="tech">
-                JSON
-              </span>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         CONTACT
-    ======================================================== -->
-
-    <section
-      id="contact"
-      class="contact"
-    >
-
-      <div class="container">
-
-
-        <div class="contact-box">
-
-          <div class="contact-content">
-
-
-            <div>
-
-              <div class="section-accent"></div>
-
-
-              <h2 class="contact-title">
-
-                Let's build something
-                <span class="green">
-                  intelligent.
-                </span>
-
-              </h2>
-
-
-              <p class="contact-description">
-
-                I'm open to software development opportunities,
-                AI projects, collaborations and interesting
-                technical challenges.
-
-                If you're building something useful,
-                let's connect.
-
-              </p>
-
-            </div>
-
-
-            <div class="contact-links">
-
-              <a
-                href="mailto:bishtanshul064@gmail.com"
-                class="contact-link"
-              >
-                ✉ Email
-              </a>
-
-
-              <a
-                href="https://github.com/codebisht"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-link"
-              >
-                GitHub ↗
-              </a>
-
-
-              <a
-                href="https://in.linkedin.com/in/anshulbisht15"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-link"
-              >
-                LinkedIn ↗
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- =======================================================
-       FOOTER
-    ======================================================== -->
-
-  <footer>
-
-    <div class="container footer-content">
-
-      <div class="footer-text">
-        © 2026 Anshul Bisht. Built with code.
-      </div>
-
-
-      <div class="footer-code">
-
-        <span>AI</span>
-        +
-        <span>Python</span>
-        +
-        <span>ML</span>
-
-      </div>
-
-    </div>
-
-  </footer>
-
-
-
-  <!-- =======================================================
-       ACTIVE NAVIGATION
-    ======================================================== -->
-
-  <script>
-
-    const sections =
-      document.querySelectorAll("section[id]");
-
-    const navLinks =
-      document.querySelectorAll(".nav-links a");
-
-
-    const observer =
-      new IntersectionObserver(
-
-        (entries) => {
-
-          entries.forEach((entry) => {
-
-            if (!entry.isIntersecting) {
-              return;
-            }
-
-
-            navLinks.forEach((link) => {
-              link.style.color = "";
             });
 
-
-            const activeLink =
-              document.querySelector(
-                `.nav-links a[href="#${entry.target.id}"]`
-              );
-
-
-            if (activeLink) {
-
-              activeLink.style.color =
-                "var(--green)";
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.25
-        }
-
-      );
-
-
-    sections.forEach((section) => {
-
-      observer.observe(section);
-
-    });
-
-  </script>
+    </script>
 
 </body>
 </html>
